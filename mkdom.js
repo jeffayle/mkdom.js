@@ -60,3 +60,9 @@ mk.addProperties = function(elem, properties) {
             elem[item] = properties[item];
     }
 };
+
+//Alias to elem.appendChild(child), for simplicity.
+//Returns nothing.
+mk.add = function(elem, child) {
+    elem.appendChild(child);
+};
