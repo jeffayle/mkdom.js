@@ -66,34 +66,3 @@ mk.addProperties = function(elem, properties) {
 mk.add = function(elem, child) {
     elem.appendChild(child);
 };
-
-//Creates a new element from data.
-//Data is an array formatted like;
-//[
-//  type ("div", "p", &c),
-//  properties (see mk.addProperties),
-//  children (list of lists formatted like data)
-//]
-//
-//Returns:
-//  Newly created DOM element
-mk.eval = function(data) {
-    var type = data[0];
-    var properties = data[1];
-    var children = data[2];
-    var children_data;
-
-    if (children.length == 0) {
-        children_data = [ ];
-    } else {
-        children_data = [ ];
-        for (var i=0; i<children.length; i++) {
-            if (typeof children[i] == "string")
-                children_data.push(document.createTextNode(children[i]));
-            else
-                children_data.push(mk.eval(children[i]));
-        }
-    }
-
-    return mk.mk(type, properties, children_data);
-};
