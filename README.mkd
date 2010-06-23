@@ -67,3 +67,9 @@ WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
 ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
 OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 
+## Using mkdom
+If you cannot host mkdom yourself, it is available at
+https://dl.dropbox.com/u/2318402/mkdom/mkdom.1.0js.js
+
+This URL is not guaranteed to work, but as long as it does the version of that
+file will remain the same.
