@@ -1,6 +1,6 @@
 var mk = new Object();
 
-//Creates a dom object from specification. Avoid calling this directly.
+//Creates a dom object from specification.
 //
 //Parameters:
 //type: string containing tag to create (for example, "div", "p")
