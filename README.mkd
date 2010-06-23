@@ -1,0 +1,69 @@
+#mkdom.js - High level Javascript library to create DOM trees
+mkdom.js is a Javascript library that contains high level functions for creating
+DOM elements.
+
+## Functions
+### mk.mk
+
+    mk.mk(type, properties, children)
+
+This is the main function, it creates a new DOM element with a specific type
+(string with name of the tag-- "div", "p", et cetera), an associative array of
+properties, and a list of children.
+
+See `mk.addProperties()` and `mk.addChildren()` for how to format these two
+respective parameters.
+
+Will return a DOM node, which can then be appended to the tree.
+
+### mk.addChildren
+
+    mk.addChildren(elem, children)
+
+This function will add children nodes to an element. Children can be any of:
+
+1) A DOM element (added as you would expect)
+2) A String (which is used to create a text node, and then added)
+3) An array containing any allowed types (each are added separately)
+4) A function that returns any allowed types
+
+These can be nested arbitrarily deep.
+
+### mk.addProperties
+
+    mk.addProperties(elem, properties)
+
+Takes an associative array (properties), and applies each value to elem.
+
+If one of the values is itself an associative array, it will recurse in.
+
+For example;
+
+    mk.addProperties(elem, {id:'element', style:{color:'red'}});
+
+Is equivilant to
+
+    elem.id = 'element';
+    elem.style.color = 'red';
+
+### mk.add
+
+    mk.add(elem, child)
+
+This is just another way to call `elem.appendChild(child)`.
+
+## Licence
+Copyright (c) 2010(s), Jeffrey Aylesworth <jeffrey@aylesworth.ca>
+
+Permission to use, copy, modify, and/or distribute this software for any
+purpose with or without fee is hereby granted, provided that the above
+copyright notice and this permission notice appear in all copies.
+
+THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES
+WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF
+MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR
+ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES
+WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
+ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
+OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
+
